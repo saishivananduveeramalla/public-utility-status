@@ -1,0 +1,93 @@
+<footer class="site-footer">
+  <div class="footer-main">
+    <div class="container footer-grid">
+      <!-- Column 1: About Portal -->
+      <div class="footer-col col-brand">
+        <div class="footer-brand">
+          <div class="footer-brand-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+              <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+            </svg>
+          </div>
+          <span class="footer-brand-title">Public Utility Status</span>
+        </div>
+        <p class="footer-desc">
+          An integrated citizen awareness and municipal utility monitoring portal developed for the 
+          <strong>Essentials of Web Programming (EWP) Lab</strong> examination.
+        </p>
+        <div class="tech-tags">
+          <span class="tech-tag">HTML5</span>
+          <span class="tech-tag">CSS3</span>
+          <span class="tech-tag">JavaScript</span>
+          <span class="tech-tag">XML/DTD</span>
+          <span class="tech-tag">Fetch API</span>
+          <span class="tech-tag">Angular</span>
+          <span class="tech-tag">TypeScript</span>
+        </div>
+      </div>
+
+      <!-- Column 2: Quick Navigation -->
+      <div class="footer-col">
+        <h4 class="footer-heading">Navigation</h4>
+        <ul class="footer-links">
+          <li><a routerLink="/">Dashboard Overview</a></li>
+          <li><a routerLink="/utilities">Utility Status Directory</a></li>
+          <li><a routerLink="/register-complaint">Report a Problem</a></li>
+          <li><a routerLink="/complaint-status">Track Complaint Status</a></li>
+          <li><a routerLink="/announcements">Public Announcements</a></li>
+          <li><a routerLink="/about">About &amp; Technical Lab Demo</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 3: Utility Categories -->
+      <div class="footer-col">
+        <h4 class="footer-heading">Covered Utilities</h4>
+        <ul class="footer-links">
+          <li><a routerLink="/utilities">Electricity (TSSPDCL)</a></li>
+          <li><a routerLink="/utilities">Water Supply (HMWSSB)</a></li>
+          <li><a routerLink="/utilities">Public Transit (Metro &amp; TSRTC)</a></li>
+          <li><a routerLink="/utilities">Internet &amp; T-Fiber</a></li>
+          <li><a routerLink="/utilities">Garbage Collection (GHMC)</a></li>
+          <li><a routerLink="/utilities">Road Maintenance (CRMP)</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 4: Emergency Helplines (Demo) -->
+      <div class="footer-col">
+        <h4 class="footer-heading">Civic Helplines (Hyderabad)</h4>
+        <div class="helpline-list">
+          <div class="helpline-item">
+            <span class="hl-name">Power Outage / Sparks:</span>
+            <span class="hl-num">1912</span>
+          </div>
+          <div class="helpline-item">
+            <span class="hl-name">Water Board (HMWSSB):</span>
+            <span class="hl-num">155313</span>
+          </div>
+          <div class="helpline-item">
+            <span class="hl-name">Municipal Grievances (GHMC):</span>
+            <span class="hl-num">040-21111111</span>
+          </div>
+          <div class="helpline-item">
+            <span class="hl-name">Metro Rail Enquiries:</span>
+            <span class="hl-num">040-69440000</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Academic Disclaimer & Copyright -->
+  <div class="footer-bottom">
+    <div class="container footer-bottom-content">
+      <p class="disclaimer-text">
+        <strong>Academic Notice:</strong> This web application is a student submission for the <em>Essentials of Web Programming (EWP) Lab</em>.
+        All data displayed is simulated demonstration data and is not connected to live government databases.
+      </p>
+      <div class="copyright-text">
+        &copy; {{ currentYear }} Public Utility Status &bull; B.Tech EWP Lab Project
+      </div>
+    </div>
+  </div>
+</footer>

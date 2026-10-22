@@ -1,0 +1,208 @@
+<div class="page-container">
+  <div class="container">
+    <!-- PAGE HEADER -->
+    <div class="page-header">
+      <span class="section-tag">Citizen Grievance Redressal</span>
+      <h1 class="page-title">Track Complaint Status</h1>
+      <p class="page-subtitle">
+        Enter your unique grievance ticket reference ID to inspect live municipal field actions, assigned technical squads, and expected restoration milestones.
+      </p>
+    </div>
+
+    <!-- TRACKING SEARCH BAR -->
+    <div class="search-card card">
+      <form (ngSubmit)="trackComplaint()" class="search-form">
+        <div class="search-input-group">
+          <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"/>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+          <input
+            type="text"
+            class="form-control track-input"
+            placeholder="Enter Complaint ID (e.g. CMP-HYD-2026-1011)"
+            [ngModel]="searchId()"
+            (ngModelChange)="searchId.set($event)"
+            name="complaintSearchId"
+          />
+        </div>
+        <div class="search-actions">
+          <button type="submit" class="btn btn-primary" [disabled]="!searchId().trim()">
+            Track Status
+          </button>
+          @if (searched()) {
+            <button type="button" class="btn btn-secondary" (click)="resetSearch()">
+              Clear
+            </button>
+          }
+        </div>
+      </form>
+    </div>
+
+    <!-- COMPLAINT FOUND DETAILS CARD -->
+    @if (searched() && foundComplaint()) {
+      <div class="complaint-detail-card card animate-fade-in">
+        <div class="ticket-header">
+          <div class="ticket-id-area">
+            <span class="ref-tag">Grievance Ticket</span>
+            <h2 class="ticket-id-title">{{ foundComplaint()?.complaintId }}</h2>
+          </div>
+          <div class="ticket-badge-area">
+            <span class="status-badge" [class]="getStatusClass(foundComplaint()?.status || 'Submitted')">
+              Status: {{ foundComplaint()?.status }}
+            </span>
+          </div>
+        </div>
+
+        <!-- 3-STEP PROGRESS TIMELINE -->
+        <div class="timeline-container">
+          <div class="timeline-step" [class.completed]="getStepIndex(foundComplaint()?.status || 'Submitted') >= 0" [class.active]="getStepIndex(foundComplaint()?.status || 'Submitted') === 0">
+            <div class="step-circle">
+              <span>1</span>
+            </div>
+            <div class="step-label">
+              <strong>Grievance Submitted</strong>
+              <small>Logged into Civic Portal</small>
+            </div>
+          </div>
+
+          <div class="timeline-line" [class.filled]="getStepIndex(foundComplaint()?.status || 'Submitted') >= 1"></div>
+
+          <div class="timeline-step" [class.completed]="getStepIndex(foundComplaint()?.status || 'Submitted') >= 1" [class.active]="getStepIndex(foundComplaint()?.status || 'Submitted') === 1">
+            <div class="step-circle">
+              <span>2</span>
+            </div>
+            <div class="step-label">
+              <strong>In Progress</strong>
+              <small>Field Squad Dispatched</small>
+            </div>
+          </div>
+
+          <div class="timeline-line" [class.filled]="getStepIndex(foundComplaint()?.status || 'Submitted') >= 2"></div>
+
+          <div class="timeline-step" [class.completed]="getStepIndex(foundComplaint()?.status || 'Submitted') >= 2" [class.active]="getStepIndex(foundComplaint()?.status || 'Submitted') === 2">
+            <div class="step-circle">
+              <span>3</span>
+            </div>
+            <div class="step-label">
+              <strong>Resolved</strong>
+              <small>Rectified &amp; Closed</small>
+            </div>
+          </div>
+        </div>
+
+        <!-- DETAILED COMPLAINT SPECIFICATIONS -->
+        <div class="ticket-specs-grid">
+          <div class="spec-item">
+            <span class="spec-label">Citizen Name:</span>
+            <span class="spec-value">{{ foundComplaint()?.citizenName }}</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-label">Mobile Contact:</span>
+            <span class="spec-value">{{ foundComplaint()?.mobile }}</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-label">Registered Email:</span>
+            <span class="spec-value">{{ foundComplaint()?.email }}</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-label">Utility Category:</span>
+            <span class="spec-value"><span class="category-pill">{{ foundComplaint()?.utilityCategory }}</span></span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-label">Service Area:</span>
+            <span class="spec-value">{{ foundComplaint()?.area }}</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-label">Submission Date &amp; Time:</span>
+            <span class="spec-value">{{ foundComplaint()?.submittedAt }}</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-label">Assigned Municipal Team:</span>
+            <span class="spec-value text-primary font-bold">{{ foundComplaint()?.assignedTeam || 'GHMC Emergency Squad' }}</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-label">Estimated Resolution:</span>
+            <span class="spec-value text-success font-bold">{{ foundComplaint()?.estimatedResolution || 'Within 24 Hours' }}</span>
+          </div>
+        </div>
+
+        <div class="ticket-description-box">
+          <h4>Reported Problem &amp; Description:</h4>
+          <p><strong>{{ foundComplaint()?.complaintType }}</strong></p>
+          <p class="desc-text">{{ foundComplaint()?.description }}</p>
+        </div>
+      </div>
+    }
+
+    <!-- NOT FOUND ALERT -->
+    @if (searched() && !foundComplaint()) {
+      <div class="alert alert-warning animate-fade-in not-found-alert">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"/>
+          <line x1="12" y1="8" x2="12" y2="12"/>
+          <line x1="12" y1="16" x2="12.01" y2="16"/>
+        </svg>
+        <div>
+          <h4>Complaint ID "{{ searchId() }}" Not Found</h4>
+          <p>No complaint record matches the specified reference ticket ID. Please check the ID or select one of the demonstration records from the table below.</p>
+        </div>
+      </div>
+    }
+
+    <!-- DEMONSTRATION & LOCALSTORAGE COMPLAINT RECORDS TABLE -->
+    <section class="sample-complaints-section">
+      <div class="section-header-row">
+        <div>
+          <span class="section-tag">Demonstration Directory</span>
+          <h3 class="section-title">Available Complaint Records</h3>
+          <p class="section-subtitle">
+            Click "Track This" on any record below to test status tracking with sample or freshly submitted data.
+          </p>
+        </div>
+        <button class="btn btn-outline btn-sm" (click)="resetDemoComplaints()">
+          Reload Defaults
+        </button>
+      </div>
+
+      <div class="table-responsive card">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Complaint ID</th>
+              <th>Citizen Name</th>
+              <th>Category</th>
+              <th>Service Area</th>
+              <th>Status</th>
+              <th>Submitted Date</th>
+              <th style="text-align: right;">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (c of complaints(); track c.complaintId) {
+              <tr [class.highlighted]="foundComplaint()?.complaintId === c.complaintId">
+                <td>
+                  <strong class="font-mono text-primary">{{ c.complaintId }}</strong>
+                </td>
+                <td>{{ c.citizenName }}</td>
+                <td><span class="category-pill">{{ c.utilityCategory }}</span></td>
+                <td>{{ c.area }}</td>
+                <td>
+                  <span class="status-badge" [class]="getStatusClass(c.status)">
+                    {{ c.status }}
+                  </span>
+                </td>
+                <td class="text-nowrap">{{ c.submittedAt }}</td>
+                <td style="text-align: right;">
+                  <button class="btn btn-primary btn-sm" (click)="quickTrack(c)">
+                    Track This
+                  </button>
+                </td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+</div>

@@ -1,0 +1,301 @@
+<div class="page-container">
+  <div class="container">
+    <!-- PAGE HEADER -->
+    <div class="page-header">
+      <span class="section-tag">Citizen Grievance Cell</span>
+      <h1 class="page-title">Register a Public Utility Complaint</h1>
+      <p class="page-subtitle">
+        Encountering a breakdown or disruption? Lodge a verified grievance to alert municipal field engineers for immediate dispatch and redressal.
+      </p>
+
+      <!-- ACADEMIC NOTICE -->
+      <div class="alert alert-info lab-notice">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"/>
+          <line x1="12" y1="16" x2="12" y2="12"/>
+          <line x1="12" y1="8" x2="12.01" y2="8"/>
+        </svg>
+        <div>
+          <strong>EWP Lab Project Notice:</strong> This is an educational lab demonstration for the Essentials of Web Programming course.
+          Submitted complaints are securely validated via Angular Reactive Forms and saved locally to browser <code>localStorage</code>.
+        </div>
+      </div>
+    </div>
+
+    <!-- SUCCESS CONFIRMATION PANEL -->
+    @if (submittedSuccess()) {
+      <div class="success-card card animate-fade-in">
+        <div class="success-header">
+          <div class="success-icon-wrapper">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+              <polyline points="22 4 12 14.01 9 11.01"/>
+            </svg>
+          </div>
+          <div>
+            <h2 class="success-title">Complaint Registered Successfully!</h2>
+            <p class="success-subtitle">Your grievance has been assigned a unique reference ticket ID.</p>
+          </div>
+        </div>
+
+        <div class="complaint-id-box">
+          <span class="ticket-label">Your Unique Complaint ID:</span>
+          <div class="id-display-row">
+            <span class="ticket-id">{{ submittedSuccess()?.complaintId }}</span>
+            <button class="btn btn-outline btn-sm copy-btn" (click)="copyComplaintId(submittedSuccess()?.complaintId || '')">
+              @if (copiedId()) {
+                <span>&check; Copied!</span>
+              } @else {
+                <span>Copy ID</span>
+              }
+            </button>
+          </div>
+          <small class="id-help-text">Save this ID to monitor live investigation progress on the Track Status page.</small>
+        </div>
+
+        <div class="summary-details">
+          <div class="summary-row">
+            <span class="sum-label">Complainant:</span>
+            <span class="sum-val">{{ submittedSuccess()?.citizenName }} ({{ submittedSuccess()?.mobile }})</span>
+          </div>
+          <div class="summary-row">
+            <span class="sum-label">Category:</span>
+            <span class="sum-val"><span class="category-pill">{{ submittedSuccess()?.utilityCategory }}</span></span>
+          </div>
+          <div class="summary-row">
+            <span class="sum-label">Service Area:</span>
+            <span class="sum-val">{{ submittedSuccess()?.area }}</span>
+          </div>
+          <div class="summary-row">
+            <span class="sum-label">Issue Type:</span>
+            <span class="sum-val">{{ submittedSuccess()?.complaintType }}</span>
+          </div>
+          <div class="summary-row">
+            <span class="sum-label">Initial Status:</span>
+            <span class="sum-val">
+              <span class="status-badge operational">Submitted</span>
+            </span>
+          </div>
+          <div class="summary-row">
+            <span class="sum-label">Timestamp:</span>
+            <span class="sum-val">{{ submittedSuccess()?.submittedAt }}</span>
+          </div>
+        </div>
+
+        <!-- FETCH POST DEMONSTRATION INSPECTION BOX (IF TRIGGERED) -->
+        @if (postDemoResponse()) {
+          <div class="post-demo-box">
+            <div class="demo-box-head">
+              <span class="demo-tag">Fetch API POST Method Demonstration</span>
+              <span class="status-201">HTTP {{ postDemoResponse().status }} {{ postDemoResponse().statusText }}</span>
+            </div>
+            <p class="demo-expl">
+              This request was executed using <code>fetch()</code> with <code>method: "POST"</code>,
+              <code>headers: &#123; 'Content-Type': 'application/json' &#125;</code>, and <code>JSON.stringify()</code> payload.
+            </p>
+            <div class="code-preview">
+              <div class="code-title">Request Body (JSON Payload):</div>
+              <pre>{{ postDemoResponse().requestBody }}</pre>
+            </div>
+            <div class="code-preview">
+              <div class="code-title">Simulated Server Response JSON:</div>
+              <pre>{{ postDemoResponse().responseBody | json }}</pre>
+            </div>
+          </div>
+        }
+
+        <div class="success-actions">
+          <a [routerLink]="['/complaint-status']" [queryParams]="{ id: submittedSuccess()?.complaintId }" class="btn btn-primary">
+            Track This Complaint Now &rarr;
+          </a>
+          <button class="btn btn-secondary" (click)="registerAnother()">
+            Submit Another Complaint
+          </button>
+        </div>
+      </div>
+    }
+
+    <!-- COMPLAINT REGISTRATION FORM -->
+    @if (!submittedSuccess()) {
+      <div class="form-wrapper card">
+        <form [formGroup]="complaintForm" (ngSubmit)="onSubmit()" novalidate>
+          <div class="form-grid">
+            <!-- Citizen Name -->
+            <div class="form-group">
+              <label class="form-label" for="citizenName">
+                Citizen Full Name <span class="required">*</span>
+              </label>
+              <input
+                id="citizenName"
+                type="text"
+                class="form-control"
+                [class.is-invalid]="isFieldInvalid('citizenName')"
+                formControlName="citizenName"
+                placeholder="e.g. Ramesh Kumar"
+              />
+              @if (isFieldInvalid('citizenName')) {
+                <span class="form-error">Please enter your full name (minimum 3 characters).</span>
+              }
+            </div>
+
+            <!-- Mobile Number (10 digits) -->
+            <div class="form-group">
+              <label class="form-label" for="mobile">
+                Mobile Number <span class="required">*</span>
+              </label>
+              <input
+                id="mobile"
+                type="tel"
+                maxlength="10"
+                class="form-control"
+                [class.is-invalid]="isFieldInvalid('mobile')"
+                formControlName="mobile"
+                placeholder="10-digit mobile (e.g. 9848012345)"
+              />
+              @if (isFieldInvalid('mobile')) {
+                <span class="form-error">Mobile number must contain exactly 10 numeric digits.</span>
+              }
+              <span class="form-help">Enter a valid 10-digit Indian phone number.</span>
+            </div>
+
+            <!-- Email Address -->
+            <div class="form-group">
+              <label class="form-label" for="email">
+                Email Address <span class="required">*</span>
+              </label>
+              <input
+                id="email"
+                type="email"
+                class="form-control"
+                [class.is-invalid]="isFieldInvalid('email')"
+                formControlName="email"
+                placeholder="e.g. citizen@example.com"
+              />
+              @if (isFieldInvalid('email')) {
+                <span class="form-error">Please enter a valid email address (e.g. name&#64;domain.com).</span>
+              }
+            </div>
+
+            <!-- Utility Category -->
+            <div class="form-group">
+              <label class="form-label" for="utilityCategory">
+                Utility Category <span class="required">*</span>
+              </label>
+              <select
+                id="utilityCategory"
+                class="form-control"
+                [class.is-invalid]="isFieldInvalid('utilityCategory')"
+                formControlName="utilityCategory"
+              >
+                <option value="" disabled selected>-- Select Affected Utility --</option>
+                @for (cat of utilityCategories; track cat) {
+                  <option [value]="cat">{{ cat }}</option>
+                }
+              </select>
+              @if (isFieldInvalid('utilityCategory')) {
+                <span class="form-error">Please select the affected utility category.</span>
+              }
+            </div>
+
+            <!-- Service Area -->
+            <div class="form-group">
+              <label class="form-label" for="area">
+                Service Area / Locality <span class="required">*</span>
+              </label>
+              <select
+                id="area"
+                class="form-control"
+                [class.is-invalid]="isFieldInvalid('area')"
+                formControlName="area"
+              >
+                <option value="" disabled selected>-- Select Hyderabad Locality --</option>
+                @for (loc of hyderabadAreas; track loc) {
+                  <option [value]="loc">{{ loc }}</option>
+                }
+              </select>
+              @if (isFieldInvalid('area')) {
+                <span class="form-error">Please choose the affected Hyderabad service locality.</span>
+              }
+            </div>
+
+            <!-- Complaint Type (Dynamic based on category) -->
+            <div class="form-group">
+              <label class="form-label" for="complaintType">
+                Specific Problem / Fault Type <span class="required">*</span>
+              </label>
+              <select
+                id="complaintType"
+                class="form-control"
+                [class.is-invalid]="isFieldInvalid('complaintType')"
+                formControlName="complaintType"
+              >
+                <option value="" disabled selected>
+                  {{ complaintForm.get('utilityCategory')?.value ? '-- Select Fault Type --' : '-- Choose Category First --' }}
+                </option>
+                @for (type of availableComplaintTypes(); track type) {
+                  <option [value]="type">{{ type }}</option>
+                }
+              </select>
+              @if (isFieldInvalid('complaintType')) {
+                <span class="form-error">Please select the specific fault classification.</span>
+              }
+            </div>
+          </div>
+
+          <!-- Description -->
+          <div class="form-group">
+            <label class="form-label" for="description">
+              Problem Description &amp; Landmark Details <span class="required">*</span>
+            </label>
+            <textarea
+              id="description"
+              rows="4"
+              class="form-control"
+              [class.is-invalid]="isFieldInvalid('description')"
+              formControlName="description"
+              placeholder="Provide specific details such as street name, pole number, severity, duration of outage..."
+            ></textarea>
+            @if (isFieldInvalid('description')) {
+              <span class="form-error">Please describe the problem in detail (at least 15 characters required).</span>
+            }
+            <span class="form-help">Minimum 15 characters to assist municipal field response teams.</span>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="form-actions">
+            <button
+              type="submit"
+              class="btn btn-primary"
+              [disabled]="complaintForm.invalid || isSubmitting()"
+            >
+              @if (isSubmitting()) {
+                <span>Registering Complaint...</span>
+              } @else {
+                <span>Submit Grievance</span>
+              }
+            </button>
+
+            <!-- Fetch POST Syllabus Feature Button -->
+            <button
+              type="button"
+              class="btn btn-success"
+              (click)="submitViaFetchPostDemo()"
+              [disabled]="complaintForm.invalid || isPostDemoLoading()"
+              title="Demonstrates syllabus Fetch POST method with JSON headers and serialization"
+            >
+              @if (isPostDemoLoading()) {
+                <span>Executing Fetch POST...</span>
+              } @else {
+                <span>Submit via Fetch API POST (Syllabus Demo)</span>
+              }
+            </button>
+
+            <button type="button" class="btn btn-secondary" (click)="complaintForm.reset()">
+              Reset Fields
+            </button>
+          </div>
+        </form>
+      </div>
+    }
+  </div>
+</div>

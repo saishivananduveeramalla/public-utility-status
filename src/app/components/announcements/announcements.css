@@ -1,0 +1,231 @@
+.page-container {
+  padding: 2.5rem 0 4rem;
+}
+
+.page-header {
+  margin-bottom: 2rem;
+}
+
+.page-title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--primary-900);
+  margin: 0.35rem 0 0.5rem;
+}
+
+.page-subtitle {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  max-width: 800px;
+  margin-bottom: 1.25rem;
+}
+
+/* Toolbar */
+.announcements-toolbar {
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.category-pills-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.filter-pill-btn {
+  background-color: var(--surface-muted);
+  border: 1px solid var(--border-medium);
+  color: var(--text-body);
+  padding: 0.4rem 0.85rem;
+  border-radius: var(--radius-full);
+  font-size: 0.825rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.filter-pill-btn:hover {
+  background-color: var(--primary-50);
+  border-color: var(--primary-300);
+  color: var(--primary-700);
+}
+
+.filter-pill-btn.active {
+  background-color: var(--primary-600);
+  border-color: var(--primary-600);
+  color: #ffffff;
+}
+
+.search-input-wrapper {
+  position: relative;
+  max-width: 450px;
+}
+
+.search-input-wrapper .search-icon {
+  position: absolute;
+  left: 0.85rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+}
+
+.search-input-wrapper input {
+  padding-left: 2.35rem;
+}
+
+/* Announcements Stack */
+.announcements-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.announcement-row {
+  display: flex;
+  padding: 0;
+  overflow: hidden;
+  border-left: 5px solid var(--primary-500);
+}
+
+.announcement-row.priority-high {
+  border-left-color: #ef4444;
+}
+.announcement-row.priority-medium {
+  border-left-color: #f59e0b;
+}
+.announcement-row.priority-normal,
+.announcement-row.priority-low {
+  border-left-color: #3b82f6;
+}
+
+.ann-sidebar {
+  width: 130px;
+  background-color: var(--surface-muted);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem 0.75rem;
+  border-right: 1px solid var(--border-light);
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+.priority-badge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius-sm);
+  text-align: center;
+}
+
+.priority-badge.priority-high {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+.priority-badge.priority-medium {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+.priority-badge.priority-normal,
+.priority-badge.priority-low {
+  background-color: #dbeafe;
+  color: #1e40af;
+}
+
+.ann-id {
+  font-size: 0.75rem;
+  color: var(--text-light);
+}
+
+.ann-main {
+  padding: 1.75rem;
+  flex-grow: 1;
+}
+
+.ann-meta-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.65rem;
+}
+
+.ann-date {
+  font-size: 0.775rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.ann-title {
+  font-size: 1.25rem;
+  font-weight: 750;
+  color: var(--primary-900);
+  margin-bottom: 0.75rem;
+}
+
+.ann-description {
+  color: var(--text-body);
+  font-size: 0.925rem;
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+}
+
+.ann-details-box {
+  background-color: var(--surface-muted);
+  padding: 0.85rem 1.25rem;
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.detail-cell {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+}
+
+.cell-label {
+  color: var(--text-muted);
+  font-weight: 600;
+  min-width: 175px;
+}
+
+.cell-val {
+  color: var(--text-main);
+  font-weight: 500;
+}
+
+.loading-state,
+.empty-card {
+  text-align: center;
+  padding: 3rem;
+  color: var(--text-muted);
+}
+
+@media (max-width: 768px) {
+  .announcement-row {
+    flex-direction: column;
+  }
+  .ann-sidebar {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0.75rem 1.25rem;
+    border-right: none;
+    border-bottom: 1px solid var(--border-light);
+  }
+  .detail-cell {
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+  .cell-label {
+    min-width: auto;
+  }
+}

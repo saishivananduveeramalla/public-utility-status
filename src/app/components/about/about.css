@@ -1,0 +1,338 @@
+.page-container {
+  padding: 2.5rem 0 4rem;
+}
+
+.page-header {
+  margin-bottom: 2.5rem;
+}
+
+.page-title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--primary-900);
+  margin: 0.35rem 0 0.5rem;
+}
+
+.page-subtitle {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  max-width: 820px;
+  margin-bottom: 1.5rem;
+}
+
+.academic-badge-card {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+  padding: 1.25rem 1.75rem;
+  background: linear-gradient(135deg, #eff6ff 0%, #ffffff 100%);
+  border-color: var(--primary-200);
+}
+
+.acad-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.acad-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: var(--primary-700);
+  font-weight: 700;
+}
+
+.acad-val {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+/* Sections */
+.doc-section {
+  margin-bottom: 3.5rem;
+}
+
+.doc-section-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--primary-900);
+  margin-bottom: 1.25rem;
+  border-bottom: 2px solid var(--border-light);
+  padding-bottom: 0.5rem;
+}
+
+.doc-card {
+  padding: 1.75rem 2rem;
+}
+
+.sectors-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.85rem;
+  margin-top: 1.25rem;
+}
+
+.sector-badge-item {
+  background-color: var(--primary-50);
+  border: 1px solid var(--primary-200);
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 0.885rem;
+  color: var(--primary-900);
+}
+
+/* Technologies Grid */
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.tech-card {
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.span-two {
+  grid-column: span 2;
+}
+
+.tech-icon {
+  display: inline-block;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.85rem;
+  width: fit-content;
+}
+
+.html-icon { background-color: #fee2e2; color: #dc2626; }
+.css-icon { background-color: #dbeafe; color: #2563eb; }
+.js-icon { background-color: #fef3c7; color: #d97706; }
+.xml-icon { background-color: #e0e7ff; color: #4338ca; }
+.fetch-icon { background-color: #ecfdf5; color: #059669; }
+.ts-icon { background-color: #ede9fe; color: #6d28d9; }
+.ng-icon { background-color: #fee2e2; color: #b91c1c; }
+
+.tech-name {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 0.5rem;
+}
+
+.tech-desc {
+  font-size: 0.875rem;
+  color: var(--text-body);
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+.tech-desc code {
+  background-color: var(--surface-muted);
+  padding: 0.15rem 0.35rem;
+  border-radius: 4px;
+  font-size: 0.825rem;
+}
+
+/* XML Console */
+.xml-console-card {
+  overflow: hidden;
+  border: 1px solid var(--border-medium);
+}
+
+.console-tabs {
+  display: flex;
+  background-color: #0f172a;
+  border-bottom: 1px solid #1e293b;
+}
+
+.console-tab-btn {
+  background: none;
+  border: none;
+  color: #94a3b8;
+  padding: 0.85rem 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: all var(--transition-fast);
+}
+
+.console-tab-btn:hover {
+  color: #ffffff;
+}
+
+.console-tab-btn.active {
+  color: #38bdf8;
+  border-bottom-color: #38bdf8;
+  background-color: #1e293b;
+}
+
+.tab-pane {
+  padding: 1.5rem;
+  background-color: #0b1120;
+}
+
+.pane-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  color: #94a3b8;
+  font-size: 0.825rem;
+}
+
+.badge-tag {
+  background-color: #1e293b;
+  color: #38bdf8;
+  padding: 0.2rem 0.5rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.725rem;
+  font-weight: 600;
+}
+
+.code-view {
+  background-color: #030712;
+  color: #a5f3fc;
+  padding: 1.25rem;
+  border-radius: var(--radius-md);
+  font-family: Consolas, Monaco, monospace;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  overflow-x: auto;
+  max-height: 450px;
+  border: 1px solid #1e293b;
+}
+
+.parser-controls {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.parse-result-text {
+  color: #34d399;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+/* Benefits Grid */
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.benefit-card {
+  padding: 1.75rem;
+  text-align: left;
+}
+
+.benefit-icon {
+  width: 3rem;
+  height: 3rem;
+  background-color: var(--primary-50);
+  color: var(--primary-600);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.benefit-card h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.benefit-card p {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin-bottom: 0;
+  line-height: 1.5;
+}
+
+/* Scope & Limitations */
+.scope-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.scope-card {
+  padding: 2rem;
+}
+
+.scope-heading {
+  font-size: 1.15rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.scope-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  font-size: 0.9rem;
+  color: var(--text-body);
+}
+
+.scope-list li {
+  position: relative;
+  padding-left: 1.25rem;
+}
+
+.scope-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--primary-500);
+  font-weight: bold;
+}
+
+@media (max-width: 992px) {
+  .academic-badge-card {
+    grid-template-columns: 1fr 1fr;
+  }
+  .tech-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .span-two {
+    grid-column: span 1;
+  }
+  .sectors-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .academic-badge-card {
+    grid-template-columns: 1fr;
+  }
+  .tech-grid {
+    grid-template-columns: 1fr;
+  }
+  .sectors-grid {
+    grid-template-columns: 1fr;
+  }
+  .scope-grid {
+    grid-template-columns: 1fr;
+  }
+  .console-tabs {
+    flex-direction: column;
+  }
+}

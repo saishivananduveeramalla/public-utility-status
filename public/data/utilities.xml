@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE utilities SYSTEM "utilities.dtd">
+<!--
+  Public Utility Status - Sample XML Data
+  Essentials of Web Programming (EWP) Lab Examination
+  Demonstrates XML storage and DTD validation for essential civic utilities
+-->
+<utilities>
+    <utility>
+        <id>U101</id>
+        <name>Electricity Distribution</name>
+        <category>Electricity</category>
+        <area>Hyderabad Central &amp; West (Banjara Hills, Jubilee Hills, Gachibowli)</area>
+        <status>Operational</status>
+        <description>TSSPDCL 33/11kV substations are functioning normally. All primary feeders are active without unscheduled load shedding.</description>
+        <lastUpdated>2026-10-22 09:30 AM</lastUpdated>
+        <expectedRestoration>All systems normal</expectedRestoration>
+        <helpline>1912</helpline>
+    </utility>
+    <utility>
+        <id>U102</id>
+        <name>Municipal Water Supply</name>
+        <category>Water Supply</category>
+        <area>Hyderabad North &amp; East (Secunderabad, Malkajgiri, Uppal)</area>
+        <status>Maintenance</status>
+        <description>HMWSSB pipeline valve replacement and pump maintenance on Krishna Drinking Water Supply Phase-III feeder line.</description>
+        <lastUpdated>2026-10-22 08:15 AM</lastUpdated>
+        <expectedRestoration>Today at 06:00 PM</expectedRestoration>
+        <helpline>155313</helpline>
+    </utility>
+    <utility>
+        <id>U103</id>
+        <name>Public Transportation</name>
+        <category>Public Transportation</category>
+        <area>Hyderabad Metropolitan (Metro Red, Blue, Green Lines &amp; TSRTC City Corridors)</area>
+        <status>Operational</status>
+        <description>Hyderabad Metro Rail running at 4-6 minute peak intervals. TSRTC electric city buses operating on full schedule with real-time tracking.</description>
+        <lastUpdated>2026-10-22 10:00 AM</lastUpdated>
+        <expectedRestoration>Normal schedules active</expectedRestoration>
+        <helpline>040-69440000</helpline>
+    </utility>
+    <utility>
+        <id>U104</id>
+        <name>Public Internet &amp; Fiber</name>
+        <category>Internet Services</category>
+        <area>IT Corridor &amp; Financial District (Hitec City, Madhapur, Kondapur)</area>
+        <status>Operational</status>
+        <description>Municipal public Wi-Fi access points and major optical fiber backbones operational with 99.8% network availability.</description>
+        <lastUpdated>2026-10-22 11:00 AM</lastUpdated>
+        <expectedRestoration>All gateway nodes active</expectedRestoration>
+        <helpline>1800-425-0012</helpline>
+    </utility>
+    <utility>
+        <id>U105</id>
+        <name>Solid Waste &amp; Garbage Collection</name>
+        <category>Garbage Collection</category>
+        <area>Hyderabad South (Old City, Charminar, Falaknuma, Chandrayangutta)</area>
+        <status>Service Disruption</status>
+        <description>GHMC Swachh auto-tipper collection delayed due to transfer station mechanical breakdown at Ibrahimbagh. Alternate compactors deployed.</description>
+        <lastUpdated>2026-10-22 07:45 AM</lastUpdated>
+        <expectedRestoration>Today by 04:30 PM</expectedRestoration>
+        <helpline>040-21111111</helpline>
+    </utility>
+    <utility>
+        <id>U106</id>
+        <name>Road &amp; Streetlight Maintenance</name>
+        <category>Road Maintenance</category>
+        <area>Cyberabad Outer &amp; Kukatpally (JNTU - Forum Mall Flyover Stretch)</area>
+        <status>Maintenance</status>
+        <description>Comprehensive Road Maintenance Program (CRMP) asphalt resurfacing and smart LED streetlight fixture replacement in progress.</description>
+        <lastUpdated>2026-10-22 09:00 AM</lastUpdated>
+        <expectedRestoration>Tomorrow at 05:00 AM</expectedRestoration>
+        <helpline>040-23225397</helpline>
+    </utility>
+</utilities>
