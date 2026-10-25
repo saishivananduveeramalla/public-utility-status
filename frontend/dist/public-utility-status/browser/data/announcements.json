@@ -1,0 +1,68 @@
+[
+  {
+    "id": "ANN-2026-001",
+    "title": "Scheduled Power Feeder Upgrade & Tree Trimming",
+    "category": "Electricity",
+    "affectedArea": "Madhapur, Kavuri Hills, Jubilee Hills Road No. 36 & 45",
+    "description": "TSSPDCL will undertake regular monsoon preparation, overhead 11kV conductor maintenance, and transformer oil filtration. Power supply will be regulated in intervals.",
+    "publishedDate": "2026-10-22 07:00 AM",
+    "expectedCompletion": "Today, 02:00 PM - 05:00 PM",
+    "priority": "High",
+    "issuer": "TSSPDCL Operation Circle - Banjara Hills"
+  },
+  {
+    "id": "ANN-2026-002",
+    "title": "Drinking Water Supply Shutdown for Valve Maintenance",
+    "category": "Water Supply",
+    "affectedArea": "Secunderabad, Marredpally, Karkhana, Bowenpally, Trimulgherry",
+    "description": "Due to critical interconnection works on the 1200mm dia MS pumping main under Krishna Phase-III, water supply will remain partially suspended for 12 hours.",
+    "publishedDate": "2026-10-21 06:00 PM",
+    "expectedCompletion": "Today by 06:00 PM",
+    "priority": "High",
+    "issuer": "HMWSSB Operations Division VII"
+  },
+  {
+    "id": "ANN-2026-003",
+    "title": "Hyderabad Metro Extended Night Hours for Tech Conclave",
+    "category": "Public Transportation",
+    "affectedArea": "Red Line (Miyapur to LB Nagar) and Blue Line (Raidurg to Nagole)",
+    "description": "Last metro trains from terminal stations will depart at 11:45 PM instead of 11:00 PM to facilitate attendees returning from the HITEX Tech Summit.",
+    "publishedDate": "2026-10-22 08:30 AM",
+    "expectedCompletion": "Applicable until 24th October 2026",
+    "priority": "Normal",
+    "issuer": "Hyderabad Metro Rail Limited (HMRL)"
+  },
+  {
+    "id": "ANN-2026-004",
+    "title": "CRMP Night Asphalt Milling & Resurfacing Work",
+    "category": "Road Maintenance",
+    "affectedArea": "JNTU - KPHB Colony - Cyber Towers Flyover Junction",
+    "description": "Road resurfacing under CRMP Phase-2 will be carried out between 11:00 PM and 05:00 AM. Traffic police will enforce lane diversion. Commuters are advised to exercise caution.",
+    "publishedDate": "2026-10-20 09:15 AM",
+    "expectedCompletion": "25th October 2026, 05:00 AM",
+    "priority": "Medium",
+    "issuer": "GHMC Engineering Project Division"
+  },
+  {
+    "id": "ANN-2026-005",
+    "title": "Special Commercial Sanitation Drive & Night Sweeping",
+    "category": "Garbage Collection",
+    "affectedArea": "Charminar Heritage Zone, Madina Market, Laad Bazaar",
+    "description": "GHMC will deploy secondary tipper compactors and sweeping crews from 10:00 PM onwards to clear festival commercial packaging waste.",
+    "publishedDate": "2026-10-22 10:00 AM",
+    "expectedCompletion": "Daily Ongoing Drive",
+    "priority": "Normal",
+    "issuer": "GHMC South Zone Sanitation Directorate"
+  },
+  {
+    "id": "ANN-2026-006",
+    "title": "Underground Optical Fiber Relocation Notice",
+    "category": "Internet Services",
+    "affectedArea": "Gachibowli Outer Ring Road Link & Financial District Phase 1",
+    "description": "Underground duct relocation along the new underpass construction. Fiber redundancy will prevent disruptions; brief latency spikes may occur for high-bandwidth links.",
+    "publishedDate": "2026-10-21 11:30 AM",
+    "expectedCompletion": "23rd October 2026, 08:00 AM",
+    "priority": "Low",
+    "issuer": "T-Fiber Infrastructure Cell"
+  }
+]

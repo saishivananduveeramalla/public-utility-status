@@ -1,0 +1,16 @@
+<!--
+  Public Utility Status - Document Type Definition (DTD)
+  Course: Essentials of Web Programming (EWP) Lab
+  Purpose: Defines the structure and valid elements for utilities.xml
+-->
+<!ELEMENT utilities (utility+)>
+<!ELEMENT utility (id, name, category, area, status, description, lastUpdated, expectedRestoration, helpline)>
+<!ELEMENT id (#PCDATA)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT category (#PCDATA)>
+<!ELEMENT area (#PCDATA)>
+<!ELEMENT status (#PCDATA)>
+<!ELEMENT description (#PCDATA)>
+<!ELEMENT lastUpdated (#PCDATA)>
+<!ELEMENT expectedRestoration (#PCDATA)>
+<!ELEMENT helpline (#PCDATA)>

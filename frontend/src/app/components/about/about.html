@@ -1,0 +1,300 @@
+<div class="page-container">
+  <div class="container">
+    <!-- PAGE HEADER -->
+    <div class="page-header">
+      <span class="section-tag">Laboratory Documentation</span>
+      <h1 class="page-title">About the Public Utility Status Project</h1>
+      <p class="page-subtitle">
+        An end-to-end responsive web portal engineered for the <strong>Essentials of Web Programming (EWP) Lab</strong> external examination, demonstrating frontend standards, asynchronous APIs, XML validation, and Angular architecture.
+      </p>
+
+      <!-- Academic Metadata Card -->
+      <div class="academic-badge-card card">
+        <div class="acad-item">
+          <span class="acad-label">Project Title:</span>
+          <span class="acad-val">Public Utility Status Portal</span>
+        </div>
+        <div class="acad-item">
+          <span class="acad-label">Course:</span>
+          <span class="acad-val">Essentials of Web Programming (EWP) Lab</span>
+        </div>
+        <div class="acad-item">
+          <span class="acad-label">Target City (Sample):</span>
+          <span class="acad-val">Greater Hyderabad Municipal Area (GHMC)</span>
+        </div>
+        <div class="acad-item">
+          <span class="acad-label">Architecture:</span>
+          <span class="acad-val">Single Page Application (SPA) with Angular &amp; TypeScript</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- OBJECTIVE & PROBLEM STATEMENT -->
+    <section class="doc-section">
+      <h2 class="doc-section-title">1. Project Objective &amp; Problem Statement</h2>
+      <div class="card doc-card">
+        <p>
+          In urban metropolises such as Hyderabad, citizens regularly encounter essential utility disruptions ranging from unscheduled electricity feeder outages and water pipeline leakages to public transit delays and overflowing garbage bins. Traditionally, each municipal agency operates isolated grievance mechanisms, leaving citizens confused about where to report issues and verify restoration schedules.
+        </p>
+        <p>
+          The <strong>Public Utility Status</strong> application solves this problem by delivering a unified, citizen-facing portal that aggregates operational statuses across <strong>six vital public utility sectors</strong>:
+        </p>
+        <div class="sectors-grid">
+          <div class="sector-badge-item">1. Electricity (TSSPDCL)</div>
+          <div class="sector-badge-item">2. Water Supply (HMWSSB)</div>
+          <div class="sector-badge-item">3. Public Transportation (Metro &amp; TSRTC)</div>
+          <div class="sector-badge-item">4. Internet Services (T-Fiber &amp; Broadband)</div>
+          <div class="sector-badge-item">5. Garbage Collection (GHMC Swachh Waste)</div>
+          <div class="sector-badge-item">6. Road Maintenance (CRMP Engineering)</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MANDATORY TECHNOLOGIES MAPPING -->
+    <section class="doc-section">
+      <h2 class="doc-section-title">2. Mandatory Technologies Implementation</h2>
+      <div class="tech-grid">
+        <!-- Tech 1: HTML5 -->
+        <div class="tech-card card">
+          <div class="tech-icon html-icon">HTML5</div>
+          <h3 class="tech-name">HTML5</h3>
+          <p class="tech-desc">
+            Provides semantic page structure using <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;footer&gt;</code>, custom form controls, and accessible HTML5 validation attributes.
+          </p>
+        </div>
+
+        <!-- Tech 2: CSS3 -->
+        <div class="tech-card card">
+          <div class="tech-icon css-icon">CSS3</div>
+          <h3 class="tech-name">CSS3</h3>
+          <p class="tech-desc">
+            Responsive Flexbox and CSS Grid layouts with a light civic palette (Blue, Green, White), custom status badges (Operational, Maintenance, Disruption), card hover animations, and media queries for desktop and mobile form factors.
+          </p>
+        </div>
+
+        <!-- Tech 3: JavaScript -->
+        <div class="tech-card card">
+          <div class="tech-icon js-icon">JS</div>
+          <h3 class="tech-name">JavaScript (ES6+)</h3>
+          <p class="tech-desc">
+            Modern asynchronous execution with <code>async/await</code>, browser <code>localStorage</code> management for persistent grievance records, and the <code>DOMParser</code> API for native XML document traversal.
+          </p>
+        </div>
+
+        <!-- Tech 4 & 5: XML & DTD -->
+        <div class="tech-card card">
+          <div class="tech-icon xml-icon">XML</div>
+          <h3 class="tech-name">XML &amp; DTD</h3>
+          <p class="tech-desc">
+            Structured data representation in <code>utilities.xml</code> validated against formal element declarations and grammar rules in <code>utilities.dtd</code>. Demonstrates document typing and markup separation.
+          </p>
+        </div>
+
+        <!-- Tech 6: Fetch API -->
+        <div class="tech-card card">
+          <div class="tech-icon fetch-icon">FETCH</div>
+          <h3 class="tech-name">Fetch API</h3>
+          <p class="tech-desc">
+            Asynchronous data loading using native <code>fetch()</code> for both JSON (<code>response.json()</code>) and XML (<code>response.text()</code>), as well as a simulated <code>method: "POST"</code> with JSON request payload headers.
+          </p>
+        </div>
+
+        <!-- Tech 7: TypeScript -->
+        <div class="tech-card card">
+          <div class="tech-icon ts-icon">TS</div>
+          <h3 class="tech-name">TypeScript</h3>
+          <p class="tech-desc">
+            Strongly typed models and interfaces (<code>Utility</code>, <code>Complaint</code>, <code>Announcement</code>, <code>DashboardStats</code>) with compile-time type checking and zero tolerance for arbitrary <code>any</code> usage.
+          </p>
+        </div>
+
+        <!-- Tech 8: Node.js & Express.js Backend -->
+        <div class="tech-card card">
+          <div class="tech-icon node-icon" style="background-color: #dcfce7; color: #15803d;">NODE &bull; EXPRESS</div>
+          <h3 class="tech-name">Node.js &amp; Express.js Backend</h3>
+          <p class="tech-desc">
+            Lightweight REST API running on port 3000. Provides endpoints for <code>GET /api/utilities</code>, <code>GET /api/announcements</code>, and <code>POST /api/complaints</code> with CORS enabled for Angular.
+          </p>
+        </div>
+
+        <!-- Tech 9: Angular -->
+        <div class="tech-card card span-two">
+          <div class="tech-icon ng-icon">NG</div>
+          <h3 class="tech-name">Angular Framework</h3>
+          <p class="tech-desc">
+            Component-based architecture with Standalone Components, reactive Signals (<code>signal</code>, <code>computed</code>), Reactive Forms with custom regex validation (10-digit mobile, valid email), client-side SPA routing (<code>provideRouter</code>), and Singleton Services with Dependency Injection.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERACTIVE XML & DTD LAB CONSOLE -->
+    <section class="doc-section">
+      <div class="section-header-row">
+        <div>
+          <h2 class="doc-section-title">3. XML &amp; DTD Laboratory Showcase</h2>
+          <p class="section-subtitle">
+            Inspect the underlying XML markup, DTD schema definition, or execute a live in-browser DOMParser test.
+          </p>
+        </div>
+      </div>
+
+      <div class="xml-console-card card">
+        <!-- Tab Navigation -->
+        <div class="console-tabs">
+          <button
+            class="console-tab-btn"
+            [class.active]="activeTab() === 'xml'"
+            (click)="setTab('xml')"
+          >
+            utilities.xml (Data)
+          </button>
+          <button
+            class="console-tab-btn"
+            [class.active]="activeTab() === 'dtd'"
+            (click)="setTab('dtd')"
+          >
+            utilities.dtd (DTD Grammar)
+          </button>
+          <button
+            class="console-tab-btn"
+            [class.active]="activeTab() === 'parser'"
+            (click)="setTab('parser')"
+          >
+            Live DOMParser Console
+          </button>
+        </div>
+
+        <!-- Tab 1: XML Source -->
+        @if (activeTab() === 'xml') {
+          <div class="tab-pane">
+            <div class="pane-meta">
+              <span>File: <code>public/data/utilities.xml</code></span>
+              <span class="badge-tag">Valid XML with DTD Reference</span>
+            </div>
+            <pre class="code-view"><code>{{ rawXml() }}</code></pre>
+          </div>
+        }
+
+        <!-- Tab 2: DTD Source -->
+        @if (activeTab() === 'dtd') {
+          <div class="tab-pane">
+            <div class="pane-meta">
+              <span>File: <code>public/data/utilities.dtd</code></span>
+              <span class="badge-tag">Document Type Definition</span>
+            </div>
+            <pre class="code-view"><code>{{ rawDtd() }}</code></pre>
+          </div>
+        }
+
+        <!-- Tab 3: DOMParser Test -->
+        @if (activeTab() === 'parser') {
+          <div class="tab-pane">
+            <div class="parser-controls">
+              <button class="btn btn-primary btn-sm" (click)="testLiveDomParser()" [disabled]="isParsing()">
+                @if (isParsing()) {
+                  <span>Executing DOMParser...</span>
+                } @else {
+                  <span>Execute DOMParser on utilities.xml</span>
+                }
+              </button>
+              @if (parseStatus()) {
+                <span class="parse-result-text">{{ parseStatus() }}</span>
+              }
+            </div>
+
+            @if (parsedXmlNodes().length > 0) {
+              <div class="table-responsive">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>XML Node &lt;id&gt;</th>
+                      <th>&lt;name&gt;</th>
+                      <th>&lt;category&gt;</th>
+                      <th>&lt;status&gt;</th>
+                      <th>&lt;area&gt;</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    @for (node of parsedXmlNodes(); track node.id) {
+                      <tr>
+                        <td><strong class="font-mono">{{ node.id }}</strong></td>
+                        <td>{{ node.name }}</td>
+                        <td><span class="category-pill">{{ node.category }}</span></td>
+                        <td><strong>{{ node.status }}</strong></td>
+                        <td>{{ node.area }}</td>
+                      </tr>
+                    }
+                  </tbody>
+                </table>
+              </div>
+            }
+          </div>
+        }
+      </div>
+    </section>
+
+    <!-- CITIZEN VALUE & IMPACT -->
+    <section class="doc-section">
+      <h2 class="doc-section-title">4. How this Portal Helps Citizens</h2>
+      <div class="benefits-grid">
+        <div class="benefit-card card">
+          <div class="benefit-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+              <circle cx="12" cy="12" r="3"/>
+            </svg>
+          </div>
+          <h4>Proactive Awareness</h4>
+          <p>Citizens can anticipate scheduled maintenance and power/water shutdowns before they occur, allowing prior planning.</p>
+        </div>
+
+        <div class="benefit-card card">
+          <div class="benefit-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+              <polyline points="22 4 12 14.01 9 11.01"/>
+            </svg>
+          </div>
+          <h4>Frictionless Grievances</h4>
+          <p>No waiting on congested toll lines. Citizens report outages with validated details and immediately receive a tracking ticket.</p>
+        </div>
+
+        <div class="benefit-card card">
+          <div class="benefit-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+            </svg>
+          </div>
+          <h4>Transparent Progress</h4>
+          <p>Real-time grievance tracking with milestones (Submitted &rarr; In Progress &rarr; Resolved) builds civic accountability.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- LIMITATIONS & FUTURE ENHANCEMENTS -->
+    <section class="doc-section">
+      <h2 class="doc-section-title">5. Project Limitations &amp; Future Scope</h2>
+      <div class="scope-grid">
+        <div class="card scope-card">
+          <h3 class="scope-heading text-warning">Current Academic Limitations</h3>
+          <ul class="scope-list">
+            <li><strong>Demonstration Data:</strong> All utility records and status updates represent simulated Hyderabad conditions for college demonstration.</li>
+            <li><strong>Local Browser Storage:</strong> Registered grievances are saved in browser <code>localStorage</code>; they do not write to live government SQL/NoSQL databases.</li>
+            <li><strong>Mocked Fetch POST:</strong> Grievance POST submission uses a client-side simulated REST endpoint adhering to the EWP syllabus without requiring an external backend server.</li>
+          </ul>
+        </div>
+
+        <div class="card scope-card">
+          <h3 class="scope-heading text-success">Future Production Enhancements</h3>
+          <ul class="scope-list">
+            <li><strong>Government API Gateways:</strong> Integration with official SCADA telemetry from TSSPDCL and HMWSSB smart flow meters.</li>
+            <li><strong>GIS Map Visualization:</strong> Interactive geospatial mapping showing outage polygons, water supply feeder lines, and live GPS bus tracking.</li>
+            <li><strong>Automated SMS &amp; WhatsApp Alerts:</strong> Push notifications dispatched to registered mobile numbers whenever ticket status changes.</li>
+            <li><strong>Image Evidence Uploads:</strong> Ability for citizens to photograph broken poles or open sewage and upload images with geo-tag metadata.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
